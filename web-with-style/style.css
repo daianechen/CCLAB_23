@@ -1,0 +1,36 @@
+/* To style an element, I first name the element, then write style inside the {...} */
+body{
+    background-color: pink
+    }
+
+h2{
+    /* styles consists of an aattribute:value pair*/
+    color:  green
+
+}
+
+img{
+    width: 100px
+}
+
+p{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 20px;
+}
+
+.firstCapyCaption{
+    color: red; 
+}
+    
+.secondCapyCaption{
+    color: blue; 
+}
+
+.superHighlight{
+    font-weight: bold;
+    color: green;
+    background-color: black;
+    text-decoration: overline;
+
+}
+
