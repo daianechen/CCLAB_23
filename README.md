@@ -1,15 +1,18 @@
-# Daiane
- 
- here you can see my code: [https://github.com/daianechen/CCLAB_23](https://github.com/daianechen/CCLAB_23)
+# Welcome to My World
 
-and this is the live version of it on Github pages: [https://daianechen.github.io/CCLAB_23](https://daianechen.github.io/CCLAB_23)
+There are two views of my work: 
 
-this is the root, or very base of my cclab folder
+### Code on GitHub.com
+You can see the actual code I wrote if you view this repository on [github.com/daianechen/CCLab_23](https://github.com/daianechen/CCLAB_23).
 
-if you see this on a url that looks like
+### Live Versions on GitHub Pages
+If you want to see the rendered versions of each web project, you will have to visit the GitHub Page instead: [daianechen.github.io/CCLab_23](https://daianechen.github.io/CCLab_23) 
 
-daianechen.github.io/repo-name 
+### Some of my projects:
+Below links will lead you to either the code or the live version depending on whether you see this page on github.com or github.io. Use above links to switch!
 
-then you can append project/website/folder names to the url to get to the actual webpages
+- [My first website](first-website/index.html)
+- [Here I learned CSS](web-with-style)
+- [and this is my template for future projects. it includes a p5 canvas](template)
 
-[my first project](first-website)
+more to come, see you soon!
