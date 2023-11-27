@@ -1,0 +1,9 @@
+body{
+    background-color: blue;
+}
+
+p{
+    color: rgb(181, 78, 95);
+    font-family: sans-serif;
+    background-color: rgb(252, 255, 240);
+}

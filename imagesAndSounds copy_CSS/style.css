@@ -1,0 +1,59 @@
+p{
+    color: whitesmoke; 
+    background-color: palevioletred;
+    outline-color: black;
+    outline-width: 1px;
+    outline-style: dotted;
+}
+/* select classes with "." and classname */
+.description{
+    text-decoration: underline;
+}
+#canvasWrapper{
+    background-color: aquamarine;
+    outline: 2px blueviolet solid;
+}
+.p5name{
+    /* background-color: rgb(120, 50, 60); */
+    outline: 3px pink solid;
+    /* display: block */
+}
+
+/* to center it */
+.captionWrapper{
+    margin: 30px; 
+    padding: 5px;
+    /* margin-left: 50px; */
+    outline: 1px black solid;
+    background-color: chartreuse;
+}
+
+.caption{
+    outline: 1px red dotted;
+    margin: 0; /* caption has no margin */
+    
+}
+/* careful with absolute- exact position will differ in different platforms */
+box2{
+    position: absolute;
+    left: 400px;
+    top: 200px;
+}
+
+box3{
+    position: fixed;
+    left: 0px;
+    top: 0px;
+}
+
+box1{
+    position: relative;
+    left: 0px;
+    top: 0px;
+}
+
+.myText{
+    outline: 1px solid;
+    left: 0px;
+    top: 0px;
+}

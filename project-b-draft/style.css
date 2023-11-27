@@ -1,0 +1,41 @@
+
+
+h1{
+    text-align:  center; 
+    color:purple;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+.description{
+    text-decoration: bold;
+}
+
+}
+p{
+    color: black;
+    text-align:center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+body{
+    color: black;
+    text-align:center;
+    font-family: "Helvetica";
+	background-color: pink;
+}
+
+/* div {
+	background-color: white;
+	width: 400px;
+	height: 100px;
+	padding: 80px;
+	margin: 30px;
+
+
+}
+
+.display-div {
+	/*display: none;*/
+/* }
+
+.visibility-div {
+	visibility: hidden;
+} */ *

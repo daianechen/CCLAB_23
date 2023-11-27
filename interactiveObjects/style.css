@@ -1,0 +1,21 @@
+p {
+    color: pink;
+    background-color: orange;
+}
+
+/*
+select classed with 
+"." and classname 
+*/
+.description{
+   text-decoration: underline; 
+}
+
+#canvasWrapper{
+    /* background-color: green; */
+    outline: 2px green solid;
+}
+.p5name{
+    /* background-color: rgb(233, 29, 230); */
+    outline: 3px pink solid;
+}
