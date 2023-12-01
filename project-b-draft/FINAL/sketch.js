@@ -95,7 +95,7 @@ class FilmRoll {
 
     // this.speed= -3; //loop later
     //this.speed = speed
-    this.soundPlay = false;
+    this.soundNotPlay = true;
   }
   display() {
     push();
@@ -239,13 +239,16 @@ class FilmRoll {
     //use if statements here for the 2 that play sounds (use the bottom number)
     // if mouseIsPressed
 
-      if (mXonFilm > 505 && mXonFilm< 945 && mYonFIlm > 84 && mYonFIlm<632) {
-        // this.soundPlay = true
-        waterSound.play();
+      if (mXonFilm > 505 && mXonFilm< 945 && mYonFIlm > 84 && mYonFIlm<632 ) {
+        // console.log(this.soundNotPlay)
+        if(waterSound.isPlaying() == false){
+          waterSound.play();
 
+        }
+        // this.soundNotPlay = false
       } else {
         waterSound.stop();
-        this.soundPlay = false;
+
       }
 
       // if (mXonFilm > 505 && mXonFilm< 945 && mYonFIlm > 84 && mYonFIlm<632) {
@@ -265,15 +268,15 @@ class FilmRoll {
   checkMouseOnPress() {
     this.buttonLogic();
     // mouseover
-    // fill("red")
-    // // mouse in relation to window/browser
-    // let mX = mouseX;
-    // let mY = mouseY
-    // text(mouseX + " , " + mouseY, mouseX, mouseY );
-    // // mouse in relation to film
-    // let mXonFilm = mouseX - this.x
-    // let mYonFIlm = mouseY;
-    // text(mXonFilm + " , " + mYonFIlm, mouseX, mouseY+30 );
+    fill("red")
+    // mouse in relation to window/browser
+    let mX = mouseX;
+    let mY = mouseY
+    text(mouseX + " , " + mouseY, mouseX, mouseY );
+    // mouse in relation to film
+    let mXonFilm = mouseX - this.x
+    let mYonFIlm = mouseY;
+    text(mXonFilm + " , " + mYonFIlm, mouseX, mouseY+30 );
 
     if (mXonFilm > 2217 && mXonFilm< 2280 && mYonFIlm > 352 && mYonFIlm<490){
       beerSound.play();
