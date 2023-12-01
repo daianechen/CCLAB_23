@@ -259,8 +259,10 @@ class FilmRoll {
       // }
       
       if (mXonFilm > 3005 && mXonFilm< 3445 && mYonFIlm > 84 && mYonFIlm<632){
-        mountainSound.play();
-      } else{
+        if(mountainSound.isPlaying() == false){
+          mountainSound.play();
+      } 
+    }else{
         mountainSound.stop();
       }
     }
@@ -282,7 +284,7 @@ class FilmRoll {
       beerSound.play();
     } else {
       beerSound.stop();
-      this.soundPlay = false;
+      // this.soundPlay = false;
     }
 
   }
