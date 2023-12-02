@@ -18,7 +18,7 @@ let speed = -3;
 
 function preload() {
   for (let i = 1; i < 9; i++) {
-    if (i == 1 || i == 3 || i == 4 || i == 6 || i == 8) {
+    if (i == 1 || i == 3 || i == 4 || i == 6 || i == 8 ) {
       let filename = "library/film" + i + ".jpg";
       let film = loadImage(filename);
       let the_img= new normalImage(film)
@@ -134,7 +134,7 @@ class FilmRoll {
     this.drawButton();
     
 
-    text(this.x, 20, 20)
+    //text(this.x, 20, 20)
     
     
   }
@@ -220,26 +220,48 @@ class FilmRoll {
       this.gl = 218;
       this.bl = 218;
     }
+    function mousePressed() {
+      let rightButtonDistance = dist(
+        mouseX,
+        mouseY,
+        (3 * width) / 4 - 60,
+        height - 40 / 2 - 20
+      );
+      let leftButtonDistance = dist(
+        mouseX,
+        mouseY,
+        width / 4 + 60,
+        height - 40 / 2 - 20
+      );
+      if (rightButtonDistance <= 20) {
+        clickCamera = true;
+        speed = -3;
+      }
+      if (leftButtonDistance <= 20) {
+        clickCamera = true;
+        speed = 3;
+        //console.log(speed)
+      }
+      filmRoll.checkMouseOnPress();
+    }
+
+
   }
   checkMouseEveryFrame() {
     this.buttonLogic();
-    console.log();
-    // mouseover
+    //console.log();
+    //mouseover
     fill("red")
     // mouse in relation to window
     let mX = mouseX;
     let mY = mouseY
-    text(mouseX + " , " + mouseY, mouseX, mouseY );
+   // text(mouseX + " , " + mouseY, mouseX, mouseY );
     // mouse in relation to film
     let mXonFilm = mouseX - this.x
     let mYonFIlm = mouseY;
-    text(mXonFilm + " , " + mYonFIlm, mouseX, mouseY+30 );
+    //text(mXonFilm + " , " + mYonFIlm, mouseX, mouseY+30 );
 
-    //if mouse hovered over then sound plays
-    //use if statements here for the 2 that play sounds (use the bottom number)
-    // if mouseIsPressed
-
-      if (mXonFilm > 505 && mXonFilm< 945 && mYonFIlm > 84 && mYonFIlm<632 ) {
+      if (mXonFilm > 570 && mXonFilm< 1068 && mYonFIlm > 500 && mYonFIlm<720 ) {
         // console.log(this.soundNotPlay)
         if(waterSound.isPlaying() == false){
           waterSound.play();
@@ -250,15 +272,8 @@ class FilmRoll {
         waterSound.stop();
 
       }
-
-      // if (mXonFilm > 505 && mXonFilm< 945 && mYonFIlm > 84 && mYonFIlm<632) {
-      //   this.soundPlay = true;
-      //   if (this.soundPlay == false) {
-      //     waterSound.play();
-      //   }
-      // }
       
-      if (mXonFilm > 3005 && mXonFilm< 3445 && mYonFIlm > 84 && mYonFIlm<632){
+      if (mXonFilm > 3400 && mXonFilm< 3900 && mYonFIlm > 307 && mYonFIlm<720){
         if(mountainSound.isPlaying() == false){
           mountainSound.play();
       } 
@@ -269,18 +284,19 @@ class FilmRoll {
   
   checkMouseOnPress() {
     this.buttonLogic();
+
     // mouseover
     fill("red")
     // mouse in relation to window/browser
     let mX = mouseX;
     let mY = mouseY
-    text(mouseX + " , " + mouseY, mouseX, mouseY );
+    //text(mouseX + " , " + mouseY, mouseX, mouseY );
     // mouse in relation to film
     let mXonFilm = mouseX - this.x
     let mYonFIlm = mouseY;
-    text(mXonFilm + " , " + mYonFIlm, mouseX, mouseY+30 );
+   // text(mXonFilm + " , " + mYonFIlm, mouseX, mouseY+30 );
 
-    if (mXonFilm > 2217 && mXonFilm< 2280 && mYonFIlm > 352 && mYonFIlm<490){
+    if (mXonFilm > 2504 && mXonFilm< 2581 && mYonFIlm > 397 && mYonFIlm<563){
       beerSound.play();
     } else {
       beerSound.stop();
@@ -292,7 +308,7 @@ class FilmRoll {
   drawCamera() {
     strokeWeight(10);
     fill("white")
-    rect(windowWidth - 50, 0, 100, 700, 55, 55); // side lens
+    rect(windowWidth - 50, 0, 100, 800, 55, 55); // side lens
     rect(windowWidth - 30, -10, 30, 40, 40, 40);
   }
 
@@ -318,7 +334,6 @@ function mousePressed() {
   if (leftButtonDistance <= 20) {
     clickCamera = true;
     speed = 3;
-    //console.log(speed)
   }
   filmRoll.checkMouseOnPress();
 }
