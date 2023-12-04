@@ -103,13 +103,17 @@ class FilmRoll {
     fill(0);
     let filmX = -10;
     let filmY = windowHeight/7 -20;
+    let pictureWidth= (windowHeight*9/11-45)/5*4
+    let spacingWidth= windowHeight*25/36 //image adding border
+    let filmWidth= spacingWidth*7+pictureWidth+ (windowWidth/20)
+
     // background film roll
-    rect(filmX, filmY, 500* this.images.length, windowHeight*8/9);
+    rect(filmX, filmY, filmWidth, windowHeight*8/9);
     //windowHeight*6/7
     
     fill(255);
     for (let i = 0; i < this.images.length; i++) {
-      rect(5 + i * windowHeight*25/36, windowHeight / 5.5, (windowHeight*9/11-45)/5*4, windowHeight*9/11-45);
+      rect(5 + i * spacingWidth, windowHeight / 5.5, pictureWidth, windowHeight*9/11-45);
       films[i].display(5 + i * windowHeight*25/36, windowHeight / 5.5, (windowHeight*9/11-45)/5*4, windowHeight*9/11-45); //550
       //call special images here
       // //if i==2, then films[i].mousepress
@@ -119,7 +123,7 @@ class FilmRoll {
     }
 
     //top & bottom squares
-    for (let i = 0; i < 67; i++) {
+    for (let i = 0; i < filmWidth/60; i++) {
       // rect(i * 60, 105, 15, 15);
       // rect(i * 60, 700, 15, 15);
       rect(i * 60, ((filmY +20)*7)/6.5 - 10, 15, 15);
@@ -160,14 +164,14 @@ class FilmRoll {
     //left button
     fill(this.rl, this.gl, this.bl);
     ellipse(width / 4 + 60, height - 30 / 2 - 20, 40, 40);
-    //fill("red");
-    //text("Left", width / 4 + 60, height - 40 / 2 - 20);
+    fill("black");
+    text("Back", width / 4 + 60, height - 30 / 2 - 20);
 
     //right button
     fill(this.rr, this.gr, this.br);
-    ellipse((3 * width) / 4 - 60, height - 30 / 2 - 20, 40, 40);
-    //fill("red");
-    //text("Right", (3 * width) / 4 - 60, height - 40 / 2 - 20);
+    ellipse((3 * width) / 4 - 60, height - 40 / 2 - 20, 40, 40);
+    fill("black");
+    text("Next", (3 * width) / 4 - 60, height - 40 / 2 - 20);
     pop();
   }
 
@@ -259,27 +263,29 @@ class FilmRoll {
     let mXonFilm = mouseX - this.x
     let mYonFIlm = mouseY;
     //text(mXonFilm + " , " + mYonFIlm, mouseX, mouseY+30 );
+    let pictureWidth= (windowHeight*9/11-45)/5*4
+    let spacingWidth= windowHeight*25/36
 
-      if (mXonFilm > 570 && mXonFilm< 1068 && mYonFIlm > 500 && mYonFIlm<720 ) {
-        // console.log(this.soundNotPlay)
-        if(waterSound.isPlaying() == false){
-          waterSound.play();
-
-        }
-        // this.soundNotPlay = false
-      } else {
-        waterSound.stop();
+    if (mXonFilm > 570 && mXonFilm< 1068 && mYonFIlm > 500 && mYonFIlm<720 ) {
+      // console.log(this.soundNotPlay)
+      if(waterSound.isPlaying() == false){
+        waterSound.play();
 
       }
-      
-      if (mXonFilm > 3400 && mXonFilm< 3900 && mYonFIlm > 307 && mYonFIlm<720){
-        if(mountainSound.isPlaying() == false){
-          mountainSound.play();
-      } 
-    }else{
-        mountainSound.stop();
-      }
+      // this.soundNotPlay = false
+    } else {
+      waterSound.stop();
+
     }
+    
+    if (mXonFilm > 3400 && mXonFilm< 3900 && mYonFIlm > 307 && mYonFIlm<720){
+      if(mountainSound.isPlaying() == false){
+        mountainSound.play();
+    } 
+  }else{
+      mountainSound.stop();
+    }
+  }
   
   checkMouseOnPress() {
     this.buttonLogic();
@@ -294,24 +300,25 @@ class FilmRoll {
     let mXonFilm = mouseX - this.x
     let mYonFIlm = mouseY;
    // text(mXonFilm + " , " + mYonFIlm, mouseX, mouseY+30 );
+    let pictureWidth= (windowHeight*9/11-45)/5*4
+    let spacingWidth= windowHeight*25/36
 
     if (mXonFilm > 2504 && mXonFilm< 2581 && mYonFIlm > 397 && mYonFIlm<563){
+      // if(beerSound.isPlaying() == false){
       beerSound.play();
     } else {
       beerSound.stop();
       // this.soundPlay = false;
     }
-    noCursor();
-    
 
 
   }
-
+  
   drawCamera() {
     strokeWeight(10);
     fill("white")
-    rect(windowWidth - 50, 0, 100, 800, 55, 55); // side lens
-    rect(windowWidth - 30, -10, 30, 40, 40, 40);
+   rect(windowWidth - 50, windowHeight/40, 100, windowHeight* 19/20, 55, 55); // side lens
+    rect(windowWidth - 30, (windowHeight/40)- (windowHeight/50), 30, 40, 40, 40);
   }
 
 }

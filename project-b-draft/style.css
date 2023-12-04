@@ -11,7 +11,7 @@ element.style{
     font-size: 40px;
     color: rgb(0, 0, 0);
     text-align: center;
-    z-index: -10;
+    z-index: 10;
 }
 
 h1{
@@ -20,7 +20,7 @@ h1{
     text-align:  center; 
     margin-left: auto; 
     margin-right: auto;
-    padding: 0px;
+    padding: 10px;
     /* position: absolute; */
     /* margin-block-start: .67em;
     margin-block-end: .67em;
@@ -59,8 +59,8 @@ div {
     /* display: block; */
     position: static;
     /* width: 400px; */
-    height: 120px;
-    border-width: 2px;
+    /* height: 180px; */
+    border-width: 40px;
     /* border-style: solid; */
     /* border-color: 2D3E50;
     background-color: 95A5A6; */
@@ -76,8 +76,10 @@ div {
 
 p{
     color: black;
-    text-align:center;
+    text-align:left;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
+    width: 40;
+    /* height: 40px; */
     /* position: absolute; */
 }
 .box{
@@ -85,8 +87,8 @@ p{
     /* border-style: solid; */
     border-color: rgb(34, 40, 83);
     border-width: 20px;
-    width: 50%;
-    height: 200px;
+    width: 50%; */
+    /* height: 200px; */ */
     color: rgb(34, 40, 83);
     text-align: center;
     font-size: 17px;
@@ -112,7 +114,7 @@ body{
 }
 
 html{
-    color: rgb(75, 75, 242);
+    color: rgb(210, 164, 230);
     padding: 0px;
 }
 
