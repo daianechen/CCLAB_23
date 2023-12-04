@@ -1,4 +1,18 @@
+element.style{
+    width: 1200px;
+    height: 1200px;
+}
 
+#title {
+    font-family: 'Nanum Pen Script', cursive;
+    /* position: absolute; */
+    top: 0%;
+    left: 0%;
+    font-size: 40px;
+    color: rgb(0, 0, 0);
+    text-align: center;
+    z-index: -10;
+}
 
 h1{
     display: block;
@@ -6,11 +20,13 @@ h1{
     text-align:  center; 
     margin-left: auto; 
     margin-right: auto;
+    padding: 0px;
+    /* position: absolute; */
     /* margin-block-start: .67em;
     margin-block-end: .67em;
     margin-inline-start: 0px;
     margin-inline-end: 0px; */
-    color:#2D3E50;
+    color:#000408;
     font-family: Georgia, 'Times New Roman', Times, serif;
     font-weight: bold;
     /* box-sizing: border-box; */
@@ -26,18 +42,28 @@ h1{
     padding: 20px;
     margin-left: 12px; 
     margin-right: 12px;
+    padding: 0px;
+    /* position: absolute; */
     /* box-sizing: border-box; */
 }
 
+#button{
+    font-size: larger;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-left: 40px; 
+    margin-right: 40px;
+}
 div {
     /* display: block; */
     position: static;
     /* width: 400px; */
-    height: 180px;
+    height: 120px;
     border-width: 2px;
     /* border-style: solid; */
-    border-color: 2D3E50;
-    background-color: 95A5A6;
+    /* border-color: 2D3E50;
+    background-color: 95A5A6; */
     /* padding: 100px 120px 0psx 50px; */
     margin: 50px 50px;
     align-content: center;
@@ -52,6 +78,7 @@ p{
     color: black;
     text-align:center;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
+    /* position: absolute; */
 }
 .box{
     background-color: rgb(237, 200, 249);
@@ -59,7 +86,7 @@ p{
     border-color: rgb(34, 40, 83);
     border-width: 20px;
     width: 50%;
-    height: 250px;
+    height: 200px;
     color: rgb(34, 40, 83);
     text-align: center;
     font-size: 17px;
@@ -81,11 +108,22 @@ body{
     text-align:center;
     font-family: "Helvetica";
 	background-color:  rgb(88, 88, 134);
+    /* position: absolute; */
 }
 
 html{
     color: rgb(75, 75, 242);
+    padding: 0px;
 }
+
+/* #canvasWrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 50%;
+    z-index: -1;
+} */
 
 /* div {
 	background-color: white;
@@ -93,6 +131,9 @@ html{
 	height: 100px;
 	padding: 80px;
 	margin: 30px;
+}
 
 
+div {
+    display: block;
 }

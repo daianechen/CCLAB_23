@@ -58,7 +58,6 @@ function setup() {
   let cnv = createCanvas(windowWidth, windowHeight);
   textAlign(CENTER, CENTER);
   // cnv.parent("canvasWrapper");
-  //noCursor();
   filmRoll = new FilmRoll(startX, startY, films);
 }
 
@@ -302,6 +301,9 @@ class FilmRoll {
       beerSound.stop();
       // this.soundPlay = false;
     }
+    noCursor();
+    
+
 
   }
 
