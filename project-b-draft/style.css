@@ -1,25 +1,90 @@
 
 
 h1{
+    display: block;
+    font-size: 2em;
     text-align:  center; 
-    color:purple;
+    margin-left: auto; 
+    margin-right: auto;
+    /* margin-block-start: .67em;
+    margin-block-end: .67em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px; */
+    color:#2D3E50;
     font-family: Georgia, 'Times New Roman', Times, serif;
+    font-weight: bold;
+    /* box-sizing: border-box; */
+    /* padding: 0px; */
+}
+
+#links {
+    font-size: larger;
+    /* margin-left: 20px; */
+    font-family: 'Arial', sans-serif;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-left: 12px; 
+    margin-right: 12px;
+    /* box-sizing: border-box; */
+}
+
+div {
+    /* display: block; */
+    position: static;
+    /* width: 400px; */
+    height: 180px;
+    border-width: 2px;
+    /* border-style: solid; */
+    border-color: 2D3E50;
+    background-color: 95A5A6;
+    /* padding: 100px 120px 0psx 50px; */
+    margin: 50px 50px;
+    align-content: center;
+    justify-content: center;
+
 }
 .description{
     text-decoration: bold;
 }
 
-}
 p{
     color: black;
     text-align:center;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
+.box{
+    background-color: rgb(237, 200, 249);
+    /* border-style: solid; */
+    border-color: rgb(34, 40, 83);
+    border-width: 20px;
+    width: 50%;
+    height: 250px;
+    color: rgb(34, 40, 83);
+    text-align: center;
+    font-size: 17px;
+    padding: 60px;
+    padding-left: 60px;
+    padding-right: 60px;
+    padding-bottom: 120px;
+    margin-top: 150px;
+    margin-bottom: 150px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    border-style: solid;
+    font-family: 'Arial', sans-serif;
+
+}
 body{
     color: black;
     text-align:center;
     font-family: "Helvetica";
-	background-color: pink;
+	background-color:  rgb(88, 88, 134);
+}
+
+html{
+    color: rgb(75, 75, 242);
 }
 
 /* div {
@@ -31,11 +96,3 @@ body{
 
 
 }
-
-.display-div {
-	/*display: none;*/
-/* }
-
-.visibility-div {
-	visibility: hidden;
-} */ *
