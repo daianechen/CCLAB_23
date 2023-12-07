@@ -92,6 +92,33 @@ class FilmRoll {
     this.gr = 51;
     this.br = 51;
 
+    this.pictureWidth= (windowHeight*9/11-45)/5*4;
+    this.pictureHeight = windowHeight*9/11-45;
+    this.spacingWidth= windowHeight*25/36 //image adding border
+    this.filmWidth= this.spacingWidth*7+this.pictureWidth+ (windowWidth/20)
+    this.tinyMarginLeft = 5;
+    this.marginTop = windowHeight / 5.5
+
+
+    this.waterX = this.tinyMarginLeft+1*this.spacingWidth;
+    this.waterY =  this.marginTop + this.pictureHeight*0.65;
+    this.waterW = this.pictureWidth;
+    this.waterH = this.pictureHeight*0.35;
+
+    //rect(2906, 522, 2996-2906, 718-522); // rect for beer 
+
+    this.beerX= this.tinyMarginLeft*56+4*this.spacingWidth;
+    this.beerY= this.marginTop + this.pictureHeight*0.48;
+    this.beerW= this.pictureWidth*.16
+    this.beerH= this.pictureHeight*0.27;
+
+    // rect(3942, 418, 4525-3942, 903-418); // rect for mountain 
+    this.mountainX= this.tinyMarginLeft+6*this.spacingWidth;
+    this.mountainY= this.marginTop + this.pictureHeight*0.33;
+    this.mountainW= this.pictureWidth
+    this.mountainH= this.pictureHeight*0.67;
+
+
     // this.speed= -3; //loop later
     //this.speed = speed
     this.soundNotPlay = true;
@@ -103,27 +130,20 @@ class FilmRoll {
     fill(0);
     let filmX = -10;
     let filmY = windowHeight/7 -20;
-    let pictureWidth= (windowHeight*9/11-45)/5*4
-    let spacingWidth= windowHeight*25/36 //image adding border
-    let filmWidth= spacingWidth*7+pictureWidth+ (windowWidth/20)
+    
 
     // background film roll
-    rect(filmX, filmY, filmWidth, windowHeight*8/9);
+    rect(filmX, filmY, this.filmWidth, windowHeight*8/9);
     //windowHeight*6/7
     
     fill(255);
     for (let i = 0; i < this.images.length; i++) {
-      rect(5 + i * spacingWidth, windowHeight / 5.5, pictureWidth, windowHeight*9/11-45);
-      films[i].display(5 + i * windowHeight*25/36, windowHeight / 5.5, (windowHeight*9/11-45)/5*4, windowHeight*9/11-45); //550
-      //call special images here
-      // //if i==2, then films[i].mousepress
-      // if (i == 2 || i == 5 || i == 7 ) {
-      //   films[i].mousePressed
-      // } 
+      rect(this.tinyMarginLeft + i * this.spacingWidth, this.marginTop,this.pictureWidth, windowHeight*9/11-45);
+      films[i].display(this.tinyMarginLeft + i * this.spacingWidth, this.marginTop, this.pictureWidth, this.pictureHeight); //550
     }
 
     //top & bottom squares
-    for (let i = 0; i < filmWidth/60; i++) {
+    for (let i = 0; i < this.filmWidth/60; i++) {
       // rect(i * 60, 105, 15, 15);
       // rect(i * 60, 700, 15, 15);
       rect(i * 60, ((filmY +20)*7)/6.5 - 10, 15, 15);
@@ -131,7 +151,25 @@ class FilmRoll {
     }
 
 
+
+    noFill();
+    stroke(255);
+
+    // rectangle location reference for sounds
+    // rect(this.waterX, this.waterY, this.waterW, this.waterH); //rect for water
+
+    // mountain reference
+    // rect(3942, 418, 4525-3942, 903-418); // rect for mountain 
+    // rect(this.mountainX, this.mountainY, this.mountainW, this.mountainH);
     
+    //beer reference
+    //rect(2906, 522, 2996-2906, 718-522); // rect for beer 
+    // rect(this.beerX, this.beerY, this.beerW, this.beerH);
+
+    // if (mXonFilm > 2906 && mXonFilm< 2996 && mYonFIlm > 522 && mYonFIlm<718){
+    // if (mXonFilm > 3942 && mXonFilm< 4525 && mYonFIlm > 418 && mYonFIlm<903){
+
+    // 570 && mXonFilm< 1068 && mYonFIlm > 500 && mYonFIlm<720 
     pop();
     this.drawCamera();
     this.drawButton();
@@ -151,7 +189,7 @@ class FilmRoll {
       }
     }
 
-    if (counter >= 450) {
+    if (counter >= 500) {
       clickCamera = false;
       counter = 0;
     }
@@ -258,15 +296,20 @@ class FilmRoll {
     // mouse in relation to window
     let mX = mouseX;
     let mY = mouseY
-   // text(mouseX + " , " + mouseY, mouseX, mouseY );
+  //  text(mouseX + " , " + mouseY, mouseX, mouseY );
     // mouse in relation to film
     let mXonFilm = mouseX - this.x
-    let mYonFIlm = mouseY;
-    //text(mXonFilm + " , " + mYonFIlm, mouseX, mouseY+30 );
+    let mYonFIlm = mouseY - this.y;
+    // text(mXonFilm + " , " + mYonFIlm, mouseX, mouseY+30 );
+    // text("this.pictureWidth " + this.pictureWidth, mouseX, mouseY+60) 
+    // text("this.pictureHeight " + this.pictureHeight, mouseX, mouseY+90) 
+    // text("this.spacingWidth " + this.spacingWidth, mouseX, mouseY+120) 
+    // text("this.filmWidth " + this.filmWidth, mouseX, mouseY+150) 
+
     let pictureWidth= (windowHeight*9/11-45)/5*4
     let spacingWidth= windowHeight*25/36
 
-    if (mXonFilm > 570 && mXonFilm< 1068 && mYonFIlm > 500 && mYonFIlm<720 ) {
+    if (mXonFilm > this.waterX && mXonFilm< this.waterX+this.waterW && mYonFIlm > this.waterY && mYonFIlm<this.waterY+this.waterH ) {
       // console.log(this.soundNotPlay)
       if(waterSound.isPlaying() == false){
         waterSound.play();
@@ -278,7 +321,7 @@ class FilmRoll {
 
     }
     
-    if (mXonFilm > 3400 && mXonFilm< 3900 && mYonFIlm > 307 && mYonFIlm<720){
+    if (mXonFilm > this.mountainX && mXonFilm< this.mountainX+this.mountainW && mYonFIlm > this.mountainY && mYonFIlm< this.mountainY+this.mountainH){
       if(mountainSound.isPlaying() == false){
         mountainSound.play();
     } 
@@ -286,6 +329,8 @@ class FilmRoll {
       mountainSound.stop();
     }
   }
+
+    // if (mXonFilm > 3942 && mXonFilm< 4525 && mYonFIlm > 418 && mYonFIlm<903){
   
   checkMouseOnPress() {
     this.buttonLogic();
@@ -298,12 +343,11 @@ class FilmRoll {
     //text(mouseX + " , " + mouseY, mouseX, mouseY );
     // mouse in relation to film
     let mXonFilm = mouseX - this.x
-    let mYonFIlm = mouseY;
+    let mYonFIlm = mouseY - this.y;
    // text(mXonFilm + " , " + mYonFIlm, mouseX, mouseY+30 );
-    let pictureWidth= (windowHeight*9/11-45)/5*4
-    let spacingWidth= windowHeight*25/36
+    
 
-    if (mXonFilm > 2504 && mXonFilm< 2581 && mYonFIlm > 397 && mYonFIlm<563){
+    if (mXonFilm > this.beerX && mXonFilm< this.beerX+this.beerW && mYonFIlm > this.beerY && mYonFIlm<this.beerY+this.beerH){
       // if(beerSound.isPlaying() == false){
       beerSound.play();
     } else {
@@ -311,6 +355,7 @@ class FilmRoll {
       // this.soundPlay = false;
     }
 
+  // if (mXonFilm > 2906 && mXonFilm< 2996 && mYonFIlm > 522 && mYonFIlm<718){
 
   }
   
